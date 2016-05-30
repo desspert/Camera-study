@@ -107,12 +107,22 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\TestProjectApp.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    <ClCompile Include="..\src\MainCamera.cpp" />
+    <ClCompile Include="..\src\MainProject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="CubeMaterial.cpp" />
+    <ClCompile Include="MaterialsManager.cpp" />
+    <ClCompile Include="SphereMaterial.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\src\MainCamera.h" />
+    <ClInclude Include="..\src\ObjectBase.h" />
+    <ClInclude Include="CubeMaterial.h" />
+    <ClInclude Include="MaterialBase.h" />
+    <ClInclude Include="MaterialsManager.h" />
+    <ClInclude Include="SphereMaterial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
