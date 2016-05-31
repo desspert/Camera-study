@@ -112,6 +112,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CubeMaterial.cpp" />
+    <ClCompile Include="Key.cpp" />
     <ClCompile Include="MaterialsManager.cpp" />
     <ClCompile Include="SphereMaterial.cpp" />
   </ItemGroup>
@@ -120,6 +121,7 @@
     <ClInclude Include="..\src\MainCamera.h" />
     <ClInclude Include="..\src\ObjectBase.h" />
     <ClInclude Include="CubeMaterial.h" />
+    <ClInclude Include="Key.h" />
     <ClInclude Include="MaterialBase.h" />
     <ClInclude Include="MaterialsManager.h" />
     <ClInclude Include="SphereMaterial.h" />
