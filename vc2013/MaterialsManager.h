@@ -10,4 +10,5 @@ public:
 	MaterialManager();
 	void update();
 	void draw();
+	void setup(Vec3f camera_pos);
 };

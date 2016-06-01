@@ -4,7 +4,7 @@
 #include "cinder/gl/Light.h"        // ライティング
 #include "cinder/gl/Material.h"     // マテリアル(材質)
 #include "cinder/Camera.h"
-
+#include "../vc2013/Texture.h"
 using namespace ci;
 using namespace ci::app;
 using namespace std;

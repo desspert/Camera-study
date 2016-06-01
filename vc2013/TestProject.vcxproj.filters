@@ -34,6 +34,9 @@
     <Filter Include="Source Files\SceneManager">
       <UniqueIdentifier>{95100b25-f137-4b1f-ab74-1ecb1118fd1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Texture">
+      <UniqueIdentifier>{edc5dadc-5f26-44bc-ae3f-103f92c47794}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -63,6 +66,18 @@
     <ClInclude Include="Key.h">
       <Filter>Source Files\Key</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Source Files\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Source Files\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>Source Files\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateScene.h">
+      <Filter>Source Files\SceneManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -89,6 +104,12 @@
     </ClCompile>
     <ClCompile Include="Key.cpp">
       <Filter>Source Files\Key</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenemanager.cpp">
+      <Filter>Source Files\SceneManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@ MainCamera::MainCamera(Vec3f _pos,Vec3f _size) : ObjectBase(_pos,_size){
 		// Ž‹–ìŠp
 		60.0f,
 		// near-z, far-z
-		1.0f, 500.0f);
+		1.0f, 1000.0f);
 	camera.setEyePoint(pos);
 	camera.setCenterOfInterestPoint(Vec3f(0, 0.0f, 1000.0f));
 }
@@ -21,18 +21,18 @@ void MainCamera::update() {
 	camera.setEyePoint(pos);
 	camera.setCenterOfInterestPoint(pos + insert_point);
 	if (KEY.pressKey(KeyEvent::KEY_w)) {
-		pos += Vec3f(0.01*sin(camera_angle.x), 0.0f, 0.01*cos(camera_angle.x));
+		pos += Vec3f(0.02*sin(camera_angle.x), 0.0f, 0.02*cos(camera_angle.x));
 	}
 	if (KEY.pressKey(KeyEvent::KEY_a)) {
-		pos.x += 0.01*cos(camera_angle.x);
-		pos.z -= 0.01*sin(camera_angle.x);
+		pos.x += 0.02*cos(camera_angle.x);
+		pos.z -= 0.02*sin(camera_angle.x);
 	}
 	if (KEY.pressKey(KeyEvent::KEY_s)) {
-		pos -= Vec3f(0.01*sin(camera_angle.x), 0.0f, 0.01*cos(camera_angle.x));
+		pos -= Vec3f(0.02*sin(camera_angle.x), 0.0f, 0.02*cos(camera_angle.x));
 	}
 	if (KEY.pressKey(KeyEvent::KEY_d)) {
-		pos.x -= 0.01*cos(camera_angle.x);
-		pos.z += 0.01*sin(camera_angle.x);
+		pos.x -= 0.02*cos(camera_angle.x);
+		pos.z += 0.02*sin(camera_angle.x);
 	}
 }
 

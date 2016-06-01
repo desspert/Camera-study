@@ -19,8 +19,8 @@ public:
 	{
 		
 		camera_angle -= mouse_vec * 0.001;
-		camera_angle.y = std::min(float(M_PI / 2) + 0.01f,
-			std::max(camera_angle.y, -float(M_PI / 2) - 0.01f));
+		camera_angle.y = std::min(float(M_PI / 2) - 0.01f,
+			std::max(camera_angle.y, -float(M_PI / 2) + 0.01f));
 		camera_angle.x = std::fmod(camera_angle.x, M_PI * 2);
 		
 	}

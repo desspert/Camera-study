@@ -114,17 +114,23 @@
     <ClCompile Include="CubeMaterial.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="MaterialsManager.cpp" />
+    <ClCompile Include="Scenemanager.cpp" />
     <ClCompile Include="SphereMaterial.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\src\MainCamera.h" />
     <ClInclude Include="..\src\ObjectBase.h" />
+    <ClInclude Include="CreateScene.h" />
     <ClInclude Include="CubeMaterial.h" />
     <ClInclude Include="Key.h" />
     <ClInclude Include="MaterialBase.h" />
     <ClInclude Include="MaterialsManager.h" />
+    <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SphereMaterial.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -49,6 +49,7 @@ void MainProject::setup()
 
 	SendInput(1, &input, sizeof(INPUT));
 	inc_pos = Vec2f(0, 0);
+	material.setup(camera->getPos());
 }
 
 void MainProject::mouseMove( MouseEvent event )
