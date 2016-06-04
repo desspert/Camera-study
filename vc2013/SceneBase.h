@@ -1,8 +1,12 @@
 #pragma once
 
-class SceneBase {
+
+class SceneBase
+{
 public:
-	virtual void title() = 0;
-	virtual void gameMain() = 0;
-	virtual void result() = 0;
+	virtual void update() = 0;
+	virtual void draw() = 0;
+	virtual void setup() = 0;
+	virtual void shift() = 0;
+	
 };

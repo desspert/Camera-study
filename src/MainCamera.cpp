@@ -18,55 +18,31 @@ void MainCamera::update() {
 	insert_point.z = 1 * cos(camera_angle.x) * 1 * cos(camera_angle.y);
 	insert_point.y = sin(camera_angle.y);
 
-	camera.setEyePoint(pos);
-	camera.setCenterOfInterestPoint(pos + insert_point);
-	if (KEY.pressKey(KeyEvent::KEY_w)) {
+	camera.setEyePoint(pos + Vec3f(0, 1, 0));
+	camera.setCenterOfInterestPoint(pos + insert_point + Vec3f(0, 1, 0));
+	if (ENV.pressKey(KeyEvent::KEY_w)) {
 		pos += Vec3f(0.02*sin(camera_angle.x), 0.0f, 0.02*cos(camera_angle.x));
 	}
-	if (KEY.pressKey(KeyEvent::KEY_a)) {
+	if (ENV.pressKey(KeyEvent::KEY_a)) {
 		pos.x += 0.02*cos(camera_angle.x);
 		pos.z -= 0.02*sin(camera_angle.x);
 	}
-	if (KEY.pressKey(KeyEvent::KEY_s)) {
+	if (ENV.pressKey(KeyEvent::KEY_s)) {
 		pos -= Vec3f(0.02*sin(camera_angle.x), 0.0f, 0.02*cos(camera_angle.x));
 	}
-	if (KEY.pressKey(KeyEvent::KEY_d)) {
+	if (ENV.pressKey(KeyEvent::KEY_d)) {
 		pos.x -= 0.02*cos(camera_angle.x);
 		pos.z += 0.02*sin(camera_angle.x);
 	}
 }
 
-void MainCamera::cameraMove(KeyEvent event)
+void MainCamera::setup(Vec3f _pos, Vec3f _size)
 {
-	if (event.getCode() == KeyEvent::KEY_w) {
-		KEY.insertPress(event.getCode());
-	}
-	if (event.getCode() == KeyEvent::KEY_a) {
-		KEY.insertPress(event.getCode());
-	}
-	if (event.getCode() == KeyEvent::KEY_s) {
-		KEY.insertPress(event.getCode());
-	}
-	if (event.getCode() == KeyEvent::KEY_d) {
-		KEY.insertPress(event.getCode());
-	}
-	
-	
+	pos = _pos;
+	size = _size;
 }
 
-void MainCamera::pullKey(KeyEvent event)
-{
-	if (event.getCode() == KeyEvent::KEY_w) {
-		KEY.erasePressKey(event.getCode());
-	}
-	if (event.getCode() == KeyEvent::KEY_a) {
-		KEY.erasePressKey(event.getCode());
-	}
-	if (event.getCode() == KeyEvent::KEY_s) {
-		KEY.erasePressKey(event.getCode());
-	}
-	if (event.getCode() == KeyEvent::KEY_d) {
-		KEY.erasePressKey(event.getCode());
-	}
-}
+
+
+
 

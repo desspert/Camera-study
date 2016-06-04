@@ -1,13 +1,29 @@
 #include "SceneManager.h"
 
-void SceneManager::title()
+SceneManager::SceneManager()
 {
+	Scene::create<GameMain>(new GameMain());
 }
 
-void SceneManager::gameMain()
+
+void SceneManager::setup()
 {
+	Scene::get().setup();
 }
 
-void SceneManager::result()
+void SceneManager::update()
 {
+	Scene::get().update();
 }
+
+void SceneManager::draw()
+{
+	Scene::get().draw();
+}
+
+
+void SceneManager::shift()
+{
+	Scene::get().shift();
+}
+

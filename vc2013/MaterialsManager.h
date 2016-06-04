@@ -1,10 +1,13 @@
 #pragma once
 #include "CubeMaterial.h"
 #include "SphereMaterial.h"
+#include "../src/MainCamera.h"
+#include "Collision.h"
 #include <memory>
 class MaterialManager {
 private:
-	std::list<std::shared_ptr<MaterialBase>> cube;
+	std::vector<std::shared_ptr<MaterialBase>> player;
+	std::vector<std::shared_ptr<MaterialBase>> cube;
 	std::list<std::shared_ptr<MaterialBase>> sphere;
 public:
 	MaterialManager();

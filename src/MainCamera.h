@@ -1,6 +1,8 @@
 #pragma once
 #include "ObjectBase.h"
-#include "../vc2013/Key.h"
+#include "../vc2013/Input.h"
+
+#define CAMERA MainCamera::get()
 
 class MainCamera : public ObjectBase
 {
@@ -10,11 +12,11 @@ private:
 	Vec3f insert_point;
 	int code;
 public:
+	MainCamera() : ObjectBase(Vec3f(0, 0, 0), Vec3f(1, 1, 1)) {};
 	MainCamera(Vec3f _pos, Vec3f _size);
 	void draw();
 	void update();
-	void cameraMove(KeyEvent event);
-	void pullKey(KeyEvent event);
+	void setup(Vec3f _pos,Vec3f _size);
 	void incliment_camera_angle(Vec2f mouse_vec)
 	{
 		
@@ -23,6 +25,10 @@ public:
 			std::max(camera_angle.y, -float(M_PI / 2) + 0.01f));
 		camera_angle.x = std::fmod(camera_angle.x, M_PI * 2);
 		
+	}
+	static MainCamera& get() {
+		static MainCamera cam;
+		return cam;
 	}
 };
 

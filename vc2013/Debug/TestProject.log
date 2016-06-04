@@ -2,7 +2,7 @@
   NOTE: Use of this header (bool_trait_def.hpp) is deprecated
   NOTE: Use of this header (template_arity_spec.hpp) is deprecated
   NOTE: Use of this header (template_arity_spec.hpp) is deprecated
-c:\users\vantan\documents\github\camera-study\src\maincamera.h(24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\vantan\documents\github\camera-study\src\maincamera.h(26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\vantan\documents\github\camera-study\src\maincamera.cpp(24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\vantan\documents\github\camera-study\src\maincamera.cpp(27): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 c:\users\vantan\documents\github\camera-study\src\maincamera.cpp(28): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
@@ -10,7 +10,7 @@ c:\users\vantan\documents\github\camera-study\src\maincamera.cpp(31): warning C4
 c:\users\vantan\documents\github\camera-study\src\maincamera.cpp(34): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 c:\users\vantan\documents\github\camera-study\src\maincamera.cpp(35): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 c:\users\vantan\documents\github\cinder_0.8.6_vs2015\include\cinder\vector.h(1296): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  c:\users\vantan\documents\github\camera-study\src\maincamera.h(21): note: see reference to function template instantiation 'cinder::Vec2<float> cinder::operator *<float,double>(const cinder::Vec2<float> &,Y)' being compiled
+  c:\users\vantan\documents\github\camera-study\src\maincamera.h(23): note: see reference to function template instantiation 'cinder::Vec2<float> cinder::operator *<float,double>(const cinder::Vec2<float> &,Y)' being compiled
           with
           [
               Y=double

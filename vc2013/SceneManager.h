@@ -1,12 +1,15 @@
 #pragma once
-#include "SceneBase.h"
 
-class SceneManager : public SceneBase
+#include "GameMain.h"
+
+class SceneManager
 {
+public:
+	SceneManager();
+	void setup();
+	void update();
+	void draw();
+	void shift();
 private:
 
-public:
-	void title() override;
-	void gameMain() override;
-	void result() override;
 };

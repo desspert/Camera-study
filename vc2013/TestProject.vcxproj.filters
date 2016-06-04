@@ -28,14 +28,23 @@
     <Filter Include="Source Files\Base">
       <UniqueIdentifier>{5ef09846-c7af-4e42-950b-a71070b06fdb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Key">
-      <UniqueIdentifier>{5e684ae7-d2d4-4164-948e-29506216ad3b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\SceneManager">
       <UniqueIdentifier>{95100b25-f137-4b1f-ab74-1ecb1118fd1a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Texture">
       <UniqueIdentifier>{edc5dadc-5f26-44bc-ae3f-103f92c47794}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Title">
+      <UniqueIdentifier>{a71bc102-788f-4ee6-afd1-716b663b0119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameMain">
+      <UniqueIdentifier>{d29dc100-ccdf-46f2-b37c-4957a7ae5e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Result">
+      <UniqueIdentifier>{4dad44f9-7507-4c34-84a0-29a84148c13e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{5e684ae7-d2d4-4164-948e-29506216ad3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,20 +72,32 @@
     <ClInclude Include="SphereMaterial.h">
       <Filter>Source Files\Sphere</Filter>
     </ClInclude>
-    <ClInclude Include="Key.h">
-      <Filter>Source Files\Key</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Source Files\Texture</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Source Files\SceneManager</Filter>
     </ClInclude>
-    <ClInclude Include="SceneBase.h">
-      <Filter>Source Files\SceneManager</Filter>
-    </ClInclude>
     <ClInclude Include="CreateScene.h">
       <Filter>Source Files\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Source Files\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMain.h">
+      <Filter>Source Files\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="Envent.h">
+      <Filter>Source Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>Source Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -102,14 +123,23 @@
     <ClCompile Include="SphereMaterial.cpp">
       <Filter>Source Files\Sphere</Filter>
     </ClCompile>
-    <ClCompile Include="Key.cpp">
-      <Filter>Source Files\Key</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Source Files\Texture</Filter>
-    </ClCompile>
     <ClCompile Include="Scenemanager.cpp">
       <Filter>Source Files\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Source Files\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Source Files\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateScene.cpp">
+      <Filter>Source Files\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -111,26 +111,47 @@
     <ClCompile Include="..\src\MainProject.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="CreateScene.cpp" />
     <ClCompile Include="CubeMaterial.cpp" />
-    <ClCompile Include="Key.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="GameMain.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="MaterialsManager.cpp" />
-    <ClCompile Include="Scenemanager.cpp" />
+    <ClCompile Include="Scenemanager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="SphereMaterial.cpp" />
-    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Title.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\src\MainCamera.h" />
     <ClInclude Include="..\src\ObjectBase.h" />
-    <ClInclude Include="CreateScene.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="CreateScene.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="CubeMaterial.h" />
-    <ClInclude Include="Key.h" />
+    <ClInclude Include="Envent.h" />
+    <ClInclude Include="GameMain.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Input.h" />
     <ClInclude Include="MaterialBase.h" />
     <ClInclude Include="MaterialsManager.h" />
     <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="SphereMaterial.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Title.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
