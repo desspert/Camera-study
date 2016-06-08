@@ -6,6 +6,7 @@ CubeMaterial::CubeMaterial(Vec3f _pos, Vec3f _size,Vec3f _translate,Vec3f _rotat
 	TEX.set(name, path);
 	this->name = name;
 	angle = 0.0f;
+	
 }
 
 void CubeMaterial::update()
@@ -27,5 +28,10 @@ void CubeMaterial::draw()
 
 	TEX.get(name).disable();
 	gl::popModelView();
+}
+
+void CubeMaterial::setup()
+{
+	box = std::make_shared<AxisAlignedBox3f>(pos - size / 2, (pos - size / 2) + size);
 }
 

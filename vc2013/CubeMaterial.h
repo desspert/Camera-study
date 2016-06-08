@@ -12,5 +12,5 @@ public:
 		, std::string name, std::string path);
 	void update() override;
 	void draw() override;
-
+	void setup();
 };

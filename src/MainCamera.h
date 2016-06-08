@@ -10,7 +10,11 @@ private:
 	CameraPersp camera;
 	Vec2f camera_angle;
 	Vec3f insert_point;
+	Ray ray;
 	int code;
+	Matrix44f parent;
+	Matrix44f parent_t;
+	Matrix44f parent_r;
 public:
 	MainCamera() : ObjectBase(Vec3f(0, 0, 0), Vec3f(1, 1, 1)) {};
 	MainCamera(Vec3f _pos, Vec3f _size);
@@ -26,6 +30,15 @@ public:
 		camera_angle.x = std::fmod(camera_angle.x, M_PI * 2);
 		
 	}
+	Matrix44f getMatrix() {
+		return parent;
+	}
+	Ray getRay() {
+		return ray;
+	}
+	Vec3f getInsertPoint() {
+		return insert_point;
+	};
 	static MainCamera& get() {
 		static MainCamera cam;
 		return cam;

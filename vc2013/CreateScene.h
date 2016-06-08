@@ -7,6 +7,9 @@ using namespace ci;
 using namespace ci::app;
 class Scene
 {
+private:
+	static std::shared_ptr<SceneBase> scene;
+
 public:
 	template<typename ty>
 	static void create(ty* _scene) {
@@ -16,7 +19,4 @@ public:
 	static SceneBase& get() {
 		return *scene;
 	}
-	
-private:
-	static std::shared_ptr<SceneBase> scene;
 }; 

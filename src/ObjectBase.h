@@ -17,7 +17,7 @@ class ObjectBase : public AppNative {
 public:
 	ObjectBase(Vec3f _pos, Vec3f _size) :
 		pos(_pos),
-		size(_size) {}
+		size(_size){}
 	Vec3f getPos() {
 		return pos;
 	}
@@ -30,11 +30,11 @@ public:
 	void setSize(Vec3f _size) {
 		pos = _size;
 	}
+	std::shared_ptr<AxisAlignedBox3f> box;
+	
 protected:
 	
 	Vec3f pos;
 	Vec3f size;
-
-
-
 };
+
