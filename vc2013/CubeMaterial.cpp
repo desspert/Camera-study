@@ -21,17 +21,16 @@ void CubeMaterial::draw()
 	gl::pushModelView();
 	gl::translate(translate);
 	gl::rotate(rotate);
-
+	box = std::make_shared<AxisAlignedBox3f>(pos - size / 2, (pos - size / 2) + size);
 	TEX.get(name).enableAndBind();
-
 	gl::drawCube(pos, size);
-
+	
 	TEX.get(name).disable();
 	gl::popModelView();
 }
 
 void CubeMaterial::setup()
 {
-	box = std::make_shared<AxisAlignedBox3f>(pos - size / 2, (pos - size / 2) + size);
+	
 }
 

@@ -39,24 +39,22 @@ public:
 	void keyDown(KeyEvent event) override;
 	void keyUp(KeyEvent event) override;
 	void mouseDown(MouseEvent event) override;
-	/*void mouseUp(MouseEvent event) override;*/
+	void mouseUp(MouseEvent event) override;
 	void mouseMove(MouseEvent event) override;
 	void mouseDrag(MouseEvent event) override;
 
 	
-	void insertPress(const int& pressed_key);
-	void insertPush(const int& pressed_key);
-	void insertPull(const int& pressed_key);
+	
 
 	std::unordered_map<std::string, int> serch;
 	std::unordered_map<int, int> keys;
 	std::unordered_map<std::string, float> axis_value;
 	float getAxis(std::string axis_name, const float& velocity = 0.3);
 	
-	bool pressKey(int pressed_key);
-	Vec2f getMouseVec();
-	bool pushKey();
-	bool isPull();
 
-	
+	bool pressKey(const int& pressed_key);
+	bool pushKey(const int& pressed_key);
+	bool pullKey(const int& pressed_key);
+
+	void flashInput();
 };

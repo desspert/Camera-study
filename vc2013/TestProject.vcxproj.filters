@@ -49,6 +49,15 @@
     <Filter Include="Source Files\Weapons">
       <UniqueIdentifier>{82f5f04b-2014-448d-aa9e-df17129e72ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Sounds">
+      <UniqueIdentifier>{c07deb21-059d-4341-8421-bd747c6b043e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\plate">
+      <UniqueIdentifier>{e688d30d-47b8-48fe-9e21-7d692369b0d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Enemys">
+      <UniqueIdentifier>{b68a86c0-c381-481e-94fe-ad415aadae14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -102,11 +111,23 @@
     <ClInclude Include="Collision.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="M4.h">
-      <Filter>Source Files\Weapons</Filter>
-    </ClInclude>
     <ClInclude Include="WeaponBase.h">
       <Filter>Source Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="AK.h">
+      <Filter>Source Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Source Files\Sounds</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>Source Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Plate.h">
+      <Filter>Source Files\plate</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Source Files\Enemys</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -150,11 +171,20 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
-    <ClCompile Include="M4.cpp">
-      <Filter>Source Files\Weapons</Filter>
-    </ClCompile>
     <ClCompile Include="WeaponBase.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AK.cpp">
+      <Filter>Source Files\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Source Files\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Plate.cpp">
+      <Filter>Source Files\plate</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Enemys</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

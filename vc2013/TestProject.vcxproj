@@ -113,13 +113,15 @@
     </ClCompile>
     <ClCompile Include="CreateScene.cpp" />
     <ClCompile Include="CubeMaterial.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="GameMain.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="M4.cpp" />
+    <ClCompile Include="AK.cpp" />
     <ClCompile Include="MaterialsManager.cpp" />
+    <ClCompile Include="Plate.cpp" />
     <ClCompile Include="Scenemanager.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -127,6 +129,7 @@
     <ClCompile Include="Title.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="WeaponBase.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,23 +141,27 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="CubeMaterial.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Envent.h" />
     <ClInclude Include="GameMain.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="Input.h" />
-    <ClInclude Include="M4.h" />
+    <ClInclude Include="AK.h" />
     <ClInclude Include="MaterialBase.h" />
     <ClInclude Include="MaterialsManager.h" />
+    <ClInclude Include="Plate.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SphereMaterial.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="UIManager.h" />
     <ClInclude Include="WeaponBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

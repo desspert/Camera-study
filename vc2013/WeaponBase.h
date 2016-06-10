@@ -6,6 +6,8 @@
 #include "cinder/imageIo.h"
 #include "cinder/ObjLoader.h"       
 #include "cinder/TriMesh.h"  
+#include "SoundManager.h"
+
 
 
 class WeaponBase : public MaterialBase
@@ -19,8 +21,9 @@ protected:
 	//ƒTƒu’e–ò
 	int reserve;
 	float scatter;
-
+	bool trigger;
 public:
+	
 	WeaponBase(Vec3f _pos, Vec3f _size, Vec3f _translate, Vec3f _rotate)
 		: MaterialBase(_pos, _size, _translate, _rotate) {}
 	void update() {};
@@ -29,5 +32,7 @@ public:
 	int getAttackPoint() {
 		return attack_point;
 	}
-	
+	bool getTrigger() {
+		return trigger;
+	}
 };

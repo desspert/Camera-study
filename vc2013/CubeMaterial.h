@@ -4,7 +4,6 @@
 class CubeMaterial : public MaterialBase
 {
 private:
-	
 	std::string name;
 	float angle;
 public:
