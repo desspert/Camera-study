@@ -19,6 +19,7 @@ public:
 		rotate(_rotate){}
 	virtual void update() {};
 	virtual void draw() {};
+	void damage(int damage) {};
 	/*Matrix44f getMatrix() {
 		return matrix;
 	}*/

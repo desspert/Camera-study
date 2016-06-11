@@ -19,9 +19,7 @@ public:
 	bool getInsert() {
 		return insert;
 	}
-	void damage(int damage) {
-		hp -= damage;
-	}
+	void damage(int damage) override;
 	bool getArrive() {
 		return arrive;
 	}

@@ -8,7 +8,7 @@ MaterialManager::MaterialManager()
 	
 }
 
-void Collision(std::list<shared_ptr<ObjectBase>> obj,Ray ray,Vec3f& result) {
+void rayToBoxCollision(std::list<shared_ptr<ObjectBase>> obj,Ray ray,Vec3f& result) {
 	std::vector<float> buf;
 	for (auto it : obj) {
 		float t[3] = { 0.0f };
@@ -30,6 +30,20 @@ void Collision(std::list<shared_ptr<ObjectBase>> obj,Ray ray,Vec3f& result) {
 	
 	
 
+}
+
+void damage(std::list<std::shared_ptr<ObjectBase>> obj,
+	std::vector<std::shared_ptr<WeaponBase>> weap,Vec3f ray_point) {
+	for (auto object : obj) {
+		if (returnBoxToRayPoint(object->getPos(), object->getSize(), ray_point)) {
+			
+			for (auto weapon : weap) {
+				if (weapon->getTrigger()) {
+					object->damage(weapon->getAttackPoint());
+				}
+			}
+		}
+	}
 }
 
 void MaterialManager::setup(Vec3f camera_pos) {
@@ -108,22 +122,10 @@ void MaterialManager::draw()
 	for (auto it : sphere) {
 		it->draw();
 	}
-	for (auto it : object) {
-		it->draw();
-		
-		for (auto weapon : ak) {
-			if (it->box->intersects(CAMERA.getRay())) {
-				if (weapon->getTrigger()) {
-					console() << weapon->getAttackPoint() << std::endl;
-				}
-			}
-		}
-
-		//it->box->intersect(CAMERA.getRay(), &t[0]);
-		
-	}
 	
-	Collision(object, CAMERA.getRay(), ray_pos);
+	
+	rayToBoxCollision(object, CAMERA.getRay(), ray_pos);
+	damage(object,ak,ray_pos);
 	/*for (auto it : enemy) {
 		if (it->getInsert()) {
 			for (auto in : enemy) {

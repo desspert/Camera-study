@@ -21,6 +21,25 @@ static bool collisionBoxToBox(Vec3f box_pos1,Vec3f box_size1,Vec3f box_pos2,Vec3
 	return false;
 }
 
+static bool returnBoxToRayPoint(Vec3f box_pos,Vec3f box_size,Vec3f ray_point) {
+	box_pos -= box_size / 2;
+	box_pos -= box_size / 2;
+	if (box_pos.x <= ray_point.x) {
+		if (box_pos.x + box_size.x >= ray_point.x) {
+			if (box_pos.y <= ray_point.y) {
+				if (box_pos.y + box_size.y >= ray_point.y) {
+					if (box_pos.z <= ray_point.z) {
+						if (box_pos.z + box_size.z >= ray_point.z) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
+}
+
 //box1Ç…ìñÇΩÇËÇ…çsÇ≠Ç‡ÇÃ
 //box2Ç…ìñÇƒÇÁÇÍÇÈÇ‡ÇÃ
 static Vec3f returnBoxToBox(Vec3f box_pos1, Vec3f box_size1, Vec3f box_pos2, Vec3f box_size2) {

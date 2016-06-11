@@ -47,6 +47,7 @@ public:
 	Vec3f getInsertPoint() {
 		return insert_point;
 	};
+	void damage(int damage) {};
 	static MainCamera& get() {
 		static MainCamera cam;
 		return cam;

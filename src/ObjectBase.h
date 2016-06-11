@@ -31,7 +31,7 @@ public:
 		pos = _size;
 	}
 	std::shared_ptr<AxisAlignedBox3f> box;
-	
+	virtual void damage(int damage) = 0;
 protected:
 	
 	Vec3f pos;

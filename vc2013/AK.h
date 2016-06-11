@@ -17,7 +17,7 @@ public:
 		this->name = name;
 	}
 	
-	
+	;
 	void setup();
 	void update() override;
 	void draw() override;
