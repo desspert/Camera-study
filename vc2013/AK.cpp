@@ -58,7 +58,7 @@ void AK::fire()
 			SE.buffer_player->setBuffer(SE.getSound("ak"));
 			SE.buffer_player->start();
 			CAMERA.cameraScatter(scatter);
-			my_scatter = 0.7;
+			my_scatter = 0.5;
 			trigger = true;
 		}
 		

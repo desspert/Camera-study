@@ -37,7 +37,7 @@ void MainCamera::update() {
 	if (scatter <= 0) {
 		scatter = 0;
 	}
-	scatter -= 0.05f;
+	scatter -= 0.1f;
 	insert_point.x = 1 * sin(camera_angle.x) * 1 * cos(camera_angle.y);
 	insert_point.z = 1 * cos(camera_angle.x) * 1 * cos(camera_angle.y);
 	insert_point.y = sin(camera_angle.y);

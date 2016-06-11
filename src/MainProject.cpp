@@ -5,7 +5,7 @@
 #include "../src/MainCamera.h"
 #include "../vc2013/INPUT.h"
 #include "../vc2013/MaterialsManager.h"
-
+#include <algorithm>
 class MainProject : public AppNative {
 private:
 	SceneManager scene;

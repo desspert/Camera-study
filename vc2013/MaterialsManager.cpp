@@ -8,6 +8,30 @@ MaterialManager::MaterialManager()
 	
 }
 
+void Collision(std::list<shared_ptr<ObjectBase>> obj,Ray ray,Vec3f& result) {
+	std::vector<float> buf;
+	for (auto it : obj) {
+		float t[3] = { 0.0f };
+		if (it->box->intersect(ray, t)) {
+			if (t[0] > 0 && t[0] <= 1) {
+				buf.push_back(t[0]);
+			}
+			if (t[1] > 0 && t[1] <= 1) {
+				buf.push_back(t[1]);
+			}
+		}
+	}
+
+	if (!buf.empty())
+	{
+		auto itr = std::min_element(buf.begin(), buf.end());
+		result = ray.calcPosition(*itr);
+	}
+	
+	
+
+}
+
 void MaterialManager::setup(Vec3f camera_pos) {
 	light = std::make_shared<gl::Light>(gl::Light::DIRECTIONAL, 0);
 
@@ -20,15 +44,15 @@ void MaterialManager::setup(Vec3f camera_pos) {
 	
 	sphere.push_back(std::make_shared <SphereMaterial>(Vec3f(0, 0, 0), Vec3f(1, 0.1, 1), Vec3f(0, 0, 0), Vec3f(0, 0, 0), Vec3f(1000, 1000, 1000)
 		, "skydome", "Skydome151004y.jpg"));
-	cube.push_back(std::make_shared<CubeMaterial>(Vec3f(0, 0, 0), Vec3f(1, 1, 1), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "kabe", "ki.png"));
-	cube.push_back(std::make_shared<CubeMaterial>(Vec3f(0, -2, 0), Vec3f(50, 1, 50), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "jimen", "1762.jpg"));
-	cube.push_back(std::make_shared<CubeMaterial>(Vec3f(40, -5, 0), Vec3f(40, 30, 40), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "bill","img_9.jpg"));
-	cube.push_back(std::make_shared<CubeMaterial>(Vec3f(-40, -5, 0), Vec3f(40, 30, 40), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "bill", "img_9.jpg"));
-	cube.push_back(std::make_shared<CubeMaterial>(Vec3f(0, -6, 40), Vec3f(40, 30, 40), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "bill", "img_9.jpg"));
+	object.push_back(std::make_shared<CubeMaterial>(Vec3f(0, 0, 0), Vec3f(1, 1, 1), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "kabe", "ki.png"));
+	object.push_back(std::make_shared<CubeMaterial>(Vec3f(0, -2, 0), Vec3f(50, 1, 50), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "jimen", "1762.jpg"));
+	object.push_back(std::make_shared<CubeMaterial>(Vec3f(40, -5, 0), Vec3f(40, 30, 40), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "bill","img_9.jpg"));
+	object.push_back(std::make_shared<CubeMaterial>(Vec3f(-40, -5, 0), Vec3f(40, 30, 40), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "bill", "img_9.jpg"));
+	object.push_back(std::make_shared<CubeMaterial>(Vec3f(0, -6, 40), Vec3f(40, 30, 40), Vec3f(0, 0, 0), Vec3f(0, 0, 0), "bill", "img_9.jpg"));
 	/*cube.push_back(std::make_shared<CubeMaterial>(Vec3f(0, -1.5, 0), Vec3f(10, 1, 10), Vec3f(0, 0, 0), Vec3f(0, 1, 0), "jimen", "ki.png"));*/
 	//cube.push_back(std::make_shared<CubeMaterial>(camera_pos, Vec3f(1, 1, 1), Vec3f(0, 0, 5), Vec3f(0, 1, 0)));
-	enemy.push_back(std::make_shared<Enemy>(Vec3f(10, 1, 10), Vec3f(1, 2, 1)));
-	for (auto it : cube) {
+	object.push_back(std::make_shared<Enemy>(Vec3f(10, 1, 10), Vec3f(1, 2, 1)));
+	for (auto it : object) {
 		it->setup();
 	}
 	ak.push_back(std::make_shared<AK>(Vec3f(5,0,0),Vec3f(0, 0, 0),Vec3f(0,1,0),Vec3f(1,1,0),Vec3f(0.004,0.004,0.004),"ak", "cfn_01_b.jpg"));
@@ -49,7 +73,7 @@ void MaterialManager::update()
 	CAMERA.getRay().setDirection(CAMERA.getInsertPoint() * (1000,1000,1000) + Vec3f(0, 1, 0));
 	
 	CAMERA.setPos(Vec3f(CAMERA.getPos().x, CAMERA.getPos().y - 0.01, CAMERA.getPos().z));
-	for (auto it : cube) {
+	for (auto it : object) {
 		CAMERA.setPos(returnBoxToBox(CAMERA.getPos(), CAMERA.getSize(), it->getPos(), it->getSize()));
 		it->update();
 	}
@@ -73,7 +97,7 @@ void MaterialManager::draw()
 	
 	
 	
-	for (auto it : cube) {
+	for (auto it : object) {
 		it->draw();
 		
 		it->box->intersect(CAMERA.getRay(), &t[0]);
@@ -84,19 +108,23 @@ void MaterialManager::draw()
 	for (auto it : sphere) {
 		it->draw();
 	}
-	for (auto it : enemy) {
+	for (auto it : object) {
 		it->draw();
-		it->setInsert(it->box->intersects(CAMERA.getRay()));
+		
 		for (auto weapon : ak) {
-			if (weapon->getTrigger()) {
-				console() << weapon->getAttackPoint() << std::endl;
+			if (it->box->intersects(CAMERA.getRay())) {
+				if (weapon->getTrigger()) {
+					console() << weapon->getAttackPoint() << std::endl;
+				}
 			}
 		}
 
 		//it->box->intersect(CAMERA.getRay(), &t[0]);
 		
 	}
-	for (auto it : enemy) {
+	
+	Collision(object, CAMERA.getRay(), ray_pos);
+	/*for (auto it : enemy) {
 		if (it->getInsert()) {
 			for (auto in : enemy) {
 				if (in->getInsert()) {
@@ -115,10 +143,10 @@ void MaterialManager::draw()
 				}
 			}
 		}
-	}
+	}*/
 	
 	gl::color(0, 1, 0);
-	for (auto it : cube) {
+	for (auto it : object) {
 		gl::drawStrokedCube(it->box->getMin() + it->box->getSize() / 2, it->box->getSize());
 	}
 	gl::color(1, 0, 0);
@@ -126,7 +154,7 @@ void MaterialManager::draw()
 	
 	gl::pushModelView();
 	gl::color(0, 0, 1);
-	gl::drawSphere(CAMERA.getRay().calcPosition(t[0]), 0.1f, 12);
+	gl::drawSphere(ray_pos, 0.1f, 12);
 	gl::popModelView();
 	for (auto it : ak) {
 		it->draw();

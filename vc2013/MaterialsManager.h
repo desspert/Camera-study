@@ -7,16 +7,18 @@
 #include "cinder/Sphere.h"
 #include "AK.h"
 #include "Enemy.h"
+
 class MaterialManager {
 private:
 	std::vector<std::shared_ptr<MaterialBase>> player;
-	std::vector<std::shared_ptr<MaterialBase>> cube;
+	std::list<std::shared_ptr<ObjectBase>> object;
 	std::vector<std::shared_ptr<MaterialBase>> sphere;
 	std::vector<std::shared_ptr<WeaponBase>> ak;
 	std::shared_ptr<gl::Light> light;
-	std::list <std::shared_ptr<Enemy>> enemy;
+	
 	float t[2];
 	bool trigger;
+	Vec3f ray_pos;
 public:
 	MaterialManager();
 	bool getTrigger() {

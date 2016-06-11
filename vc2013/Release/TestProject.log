@@ -1,20 +1,53 @@
-﻿  MaterialsManager.cpp
+﻿  MainProject.cpp
+  GameMain.cpp
+  MaterialsManager.cpp
+  Scenemanager.cpp
   NOTE: Use of this header (bool_trait_def.hpp) is deprecated
   NOTE: Use of this header (template_arity_spec.hpp) is deprecated
   NOTE: Use of this header (template_arity_spec.hpp) is deprecated
-c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-MaterialsManager.cpp(21): warning C4305: 'argument': truncation from 'double' to 'float'
-MaterialsManager.cpp(34): warning C4305: 'argument': truncation from 'double' to 'float'
-MaterialsManager.cpp(51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\vantan\Documents\GitHub\cinder_0.8.6_vs2015\include\cinder/Vector.h(1296): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data (compiling source file Scenemanager.cpp)
+c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data (compiling source file MaterialsManager.cpp)
+c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data (compiling source file ..\src\MainProject.cpp)
+c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data (compiling source file GameMain.cpp)
+MaterialsManager.cpp(45): warning C4305: 'argument': truncation from 'double' to 'float'
+MaterialsManager.cpp(58): warning C4305: 'argument': truncation from 'double' to 'float'
+MaterialsManager.cpp(75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\vantan\Documents\GitHub\cinder_0.8.6_vs2015\include\cinder/Vector.h(1296): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file MaterialsManager.cpp)
   c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(30): note: see reference to function template instantiation 'cinder::Vec2<float> cinder::operator *<float,double>(const cinder::Vec2<float> &,Y)' being compiled
           with
           [
               Y=double
-          ]
+          ] (compiling source file MaterialsManager.cpp)
+C:\Users\vantan\Documents\GitHub\cinder_0.8.6_vs2015\include\cinder/Vector.h(1296): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file Scenemanager.cpp)
+  c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(30): note: see reference to function template instantiation 'cinder::Vec2<float> cinder::operator *<float,double>(const cinder::Vec2<float> &,Y)' being compiled
+          with
+          [
+              Y=double
+          ] (compiling source file Scenemanager.cpp)
+C:\Users\vantan\Documents\GitHub\cinder_0.8.6_vs2015\include\cinder/Vector.h(1296): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file ..\src\MainProject.cpp)
+  c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(30): note: see reference to function template instantiation 'cinder::Vec2<float> cinder::operator *<float,double>(const cinder::Vec2<float> &,Y)' being compiled
+          with
+          [
+              Y=double
+          ] (compiling source file ..\src\MainProject.cpp)
+C:\Users\vantan\Documents\GitHub\cinder_0.8.6_vs2015\include\cinder/Vector.h(1296): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data (compiling source file GameMain.cpp)
+  c:\users\vantan\documents\github\camera-study\vc2013\../src/MainCamera.h(30): note: see reference to function template instantiation 'cinder::Vec2<float> cinder::operator *<float,double>(const cinder::Vec2<float> &,Y)' being compiled
+          with
+          [
+              Y=double
+          ] (compiling source file GameMain.cpp)
   Generating code
-  2 of 3118 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
+  513 of 3188 functions (16.1%) were compiled, the rest were copied from previous compilation.
+    230 functions were new in current compilation
+    88 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   TestProject.vcxproj -> C:\Users\vantan\Documents\GitHub\Camera-study\vc2013\Release\TestProject.exe
